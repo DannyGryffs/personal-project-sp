@@ -1,0 +1,19 @@
+body {
+    background-color: coral;
+}
+
+/* header {
+    background-color: rgb(255, 74, 8);
+    display: flex;
+    flex-direction: row;
+} */
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#stickerDisplay {
+    
+}
