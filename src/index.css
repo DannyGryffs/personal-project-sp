@@ -1,5 +1,5 @@
 body {
-    background-color: coral;
+    background-color: rgb(255, 80, 109);
 }
 
 /* header {
@@ -9,11 +9,61 @@ body {
 } */
 
 #header {
+    background-color: rgb(181, 0, 166);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: -10px;
+
 }
 
-#stickerDisplay {
+.headerTxt {
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+    font-size: large;
+    font-weight: 300;
+}
+
+
+
+#aboutTxt {
+    font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#head {
+    padding: 50px;
+    display: flex;
+    
+    justify-content: center;
+
+}
+
+#heade {
+    background-color: cornflowerblue;
+}
+
+.packStickers {
+    max-height: 600px;
+}
+
+.pack {
+    text-align: center;
+   
+    flex-direction: column;
+    position: relative;
+}
+
+.packRound {
+    position: absolute;
+    bottom: 0px;
+    max-height: 500px;
+    z-index: 0;
     
 }

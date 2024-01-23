@@ -7,10 +7,12 @@ const app = express()
 app.use(express.json())
 
 app.get('/api/stickers', prodCtrl.allStickers)
+
 app.get('/api/packs', prodCtrl.allPacks)
 
 app.post(`/api/cart/sticker/:id`, prodCtrl.addStickerToCart)
 
+app.post(`/api/cart/pack/:id`, prodCtrl.addPackToCart)
 
 
 ViteExpress.listen(app, 3030, () => {console.log('cruising on port 3030')})

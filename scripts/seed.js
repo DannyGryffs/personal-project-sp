@@ -4,7 +4,7 @@ const stickers = [
     {
         name: "Comic Alien",
         description: "pop art syle alien",
-        tag: "space, comic",
+        tag: "Space, Comic",
         price: "4.00",
         image: "ComicAlien.png",
         packId: 1
@@ -12,7 +12,7 @@ const stickers = [
     {
         name: "Dreamy Cat",
         description: "cat sleeping on a cloud",
-        tag: "animal, dreamy",
+        tag: "Animal, Dreamy",
         price: "3.00",
         image: "DreamyCat.png",
         packId: 2
@@ -20,7 +20,7 @@ const stickers = [
     {
         name: "Artsy Pup",
         description: "line-drawn dog",
-        tag: "artsy, animals",
+        tag: "Artsy, Animals",
         price: "4.00",
         image: "ArtsyPup.png",
         packId: 2
@@ -33,19 +33,35 @@ const stickers = [
         image: "icon.png",
         packId: null
     },
+    {
+        name: "Cherry Bomb",
+        description: "Explosive cherry v1",
+        tag: "Artsy, Fruit",
+        price: "3.00",
+        image: "CherryBomb.png",
+        packId: null
+    },
+    {
+        name: "Hungry Zebra",
+        description: "Hungry Zebra",
+        tag: "Animal, Artsy, Colorful",
+        price: "4.00",
+        image: "RamenZebra.png",
+        packId: null
+    },
 
 ];
 
 const pack = [
     {
         id: 1,
-        name: "cosmos",
+        name: "Cosmos",
         description: "8 space themed stickers",
         price: "20.00"
     },
     {
         id: 2,
-        name: "animals",
+        name: "Animals",
         description: "8 animal themed stickers",
         price: "20.00"
     },

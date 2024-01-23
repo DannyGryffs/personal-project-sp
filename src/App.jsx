@@ -3,34 +3,32 @@ import { Outlet, Link } from 'react-router-dom'
 
 // const stickers = ["zebraSpagetti.png", "cherryBomb.png"]
 
-const logofile = ["icon.png"]
-
 function App() {
 
   // const eachStickers = stickers.map((sticker) => {
   //   return <img  style={{maxHeight: "200px"}} src={`../public/stickers/${sticker}`} />
   // }) 
 
-  const logo = logofile.map((logo) => {
-    return <img style={{maxHeight: "75px"}} src={`../public/logo/${logo}`} />
-  })
+  // const logo = logofile.map((logo) => {
+  //   return 
+  // })
 
   return (
     <>
-    <header>
-        <div id="header"> 
-        { logo }
+    <header id="heade">
+        <div id="header">
+          <img style={{maxHeight: "75px"}} src={`../public/logo/icon.png`} />
           <h4>
-              <Link to="/">Home</Link>
+              <Link className="headerTxt" to="/">Home</Link>
           </h4>
           <h4>
-            <Link to="/about">About</Link>
+            <Link className="headerTxt" to="/about">About</Link>
           </h4>
           <h4>
-            <Link to="/shop">Shop</Link>
+            <Link className="headerTxt" to="/shop">Shop</Link>
           </h4>
           <h4>
-            <Link to="/cart">Cart(icon)</Link>
+            <Link className="headerTxt" to="/cart">Cart(icon)</Link>
           </h4>
         </div>
     </header>

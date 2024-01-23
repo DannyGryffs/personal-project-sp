@@ -104,11 +104,10 @@ CartItem.init(
             autoIncrement: true,
             primaryKey: true
         },
-        price: {
+        quantity: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
-
     },
     {
         tableName: 'cart_items',

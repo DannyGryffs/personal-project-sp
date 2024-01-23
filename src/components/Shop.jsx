@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 function Shop() {
     return (
         <div>
-            Here is the Shop Page
+            <h2>////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Here's the Shop page /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</h2>
             <div>
-                <Link to="/stickers">Stickers</Link>
+                <h2><Link class="headerTxt" to="/stickers">Stickers</Link></h2>
             </div>
             <div>
-                <Link to="/packs">Sticker Packs</Link>
+               <h2><Link class="headerTxt" to="/packs">Sticker Packs</Link></h2>
             </div>
         </div>
     )
