@@ -6,22 +6,18 @@ const cartArr = [
 
 export default {
     allStickers: async (req, res) => {
-        console.log('hit all stickers');
+        // console.log('hit all stickers');
         let stickers = await Sticker.findAll()
 
         res.status(200).send(stickers)
     },
     allPacks: async (req, res) => {
-        console.log('hit all packs')
+        // console.log('hit all packs');
         let packs = await Pack.findAll({
             include: { 
                 model: Sticker
             }
         })
-
-        // const packsStickers = packs.map(async (eachPack) => {
-        //     eachPack.stickers = await eachPack.getStickers()
-        // }) 
 
         console.log(packs)
 
@@ -32,10 +28,10 @@ export default {
         let { id } = req.params
         // let id = req.params.id
 
-        console.log(qty)
-        console.log(id)
+        // console.log(qty)
+        // console.log(id)
     
-        console.log("hit add sticker");
+        // console.log("hit add sticker");
 
     
         //Danny's task[]: insert a row into CartItem
@@ -45,31 +41,6 @@ export default {
             quantity: qty,
             stickerId: id
         });
-
-        // let sendToCart = await sequelize.query(`
-        //     INSERT INTO cart_items ("userId", quantity, "stickerId", "packId")
-        //     VALUES (1, ${qty}, ${id}, null);
-        // `)
-
-        // console.log(sendToCart)
-
-        // res.status(200).send(something) //sends status 200 and a body
-        // res.sendStatus(200) //sends just a status 200
-        // res.send(something) //sends a body and the default status aka 200
-
-
-
-        // console.log({
-        //     stickerId: Sticker.id,
-        //     packId: Pack.id,
-        //     howMany: CartItem.qty
-        // })
-
-        // res.status(200).send({
-        //     stickerId: Sticker.id,
-        //     packId: Pack.id,
-        //     howMany: CartItem.qty
-        // })
 
         res.status(200).send("Item Successfully added to cart")
 
@@ -81,7 +52,7 @@ export default {
      addPackToCart: async (req, res) => {
         let { qty } = req.query
         let { id } = req.params
-        console.log("Hit Add Pack to cart")
+        // console.log("Hit Add Pack to cart")
 
         const sendToCart = await CartItem.create({
             userId: 1, // once users is implimented, the user id will come from user sessions
@@ -91,8 +62,40 @@ export default {
 
 
         res.sendStatus(200)
-     }
+     },
+     getCartItems: async (req, res) => {
+        const id = 1;
+        console.log("hit cart items")
 
+        let cartI = await CartItem.findAll({
+            attributes: ["quantity", "id"],
+            where: {
+                userId: id
+            },
+            include: [
+                {
+                    model: Sticker,
+                    attributes: ["name", "image", "price"]
+                },
+                {model: Pack}
+            ]
+        });
+
+        console.log(cartI);
+
+        res.status(200).send(cartI)
+
+    }
+        // get all data from cartitems where the userId = 1
+
+        // console.log(cartItemData)
+        // inlcude stckers with the id that matches the stickerId
+
+        // include packs with the id that matches the  packId
+
+        // send data back to front end
+        
+        
 
 
 }

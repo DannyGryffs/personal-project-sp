@@ -46,13 +46,15 @@ function Packs() {
                 <div key={pack.id} className='pack'>
                     {/* {console.log(pack)} */}
                     <div>
-                    <h2 className="headerTxt" >{ pack.name }</h2>
+                    <h2 className="titleTxt" >{ pack.name }</h2>
                     {showPackStickers ? 
                         eachSticker(pack.Stickers): 
                         // <div>
                         //     {/* <img className="packRound" src={`../../public/stickers/${pack.name}.png`} alt="" /> */}
                         // </div>
-                        <img className='packStickers' src={`../../public/stickers/${pack.name}.png`}   onClick={() => setShowPackStickers(true)}/>
+                        <img className='packStickers' src={`../../public/stickers/${pack.name}.png`} 
+                        //  onClick={() => setShowPackStickers(true)}
+                        />
                     }
                     <h3 className="headerTxt" >{ pack.description }</h3>
                     <br />

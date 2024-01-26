@@ -1,5 +1,7 @@
 body {
     background-color: rgb(255, 80, 109);
+    margin: 0px;
+    position: relative;
 }
 
 /* header {
@@ -13,9 +15,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin: -10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 4px black;
+    
 
 }
 
@@ -38,7 +41,7 @@ body {
 }
 
 #head {
-    padding: 50px;
+    padding: 40px;
     display: flex;
     
     justify-content: center;
@@ -66,4 +69,58 @@ body {
     max-height: 500px;
     z-index: 0;
     
+}
+
+.titleTxt {
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+    font-size: large;
+    font-weight: 300;
+}
+
+.img {
+    max-height: 100px;
+}
+
+.table {
+    /* padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 20px; */
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+    font-size: large;
+    font-weight: 300;
+    /* background-color: rgb(255, 179, 0); */
+    
+}
+
+.cartItemsCat {
+    padding: 30px;
+}
+
+.cartContainer {
+    color: black;
+    border: solid 4px black;
+    background-color: rgb(255, 174, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qtyBtns {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 55px */
+}
+
+
+.qty {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 55px
+}
+
+.price {
+    margin-left: 15px;
 }

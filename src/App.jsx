@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-    <header id="heade">
+    {/* <header id="header"> */}
         <div id="header">
           <img style={{maxHeight: "75px"}} src={`../public/logo/icon.png`} />
           <h4>
@@ -31,7 +31,7 @@ function App() {
             <Link className="headerTxt" to="/cart">Cart(icon)</Link>
           </h4>
         </div>
-    </header>
+    {/* </header> */}
     
       {/* <div>
         { eachStickers }
