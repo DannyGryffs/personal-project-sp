@@ -26,21 +26,41 @@ export default {
     addStickerToCart: async (req, res) => {
         let { qty } = req.query
         let { id } = req.params
-        // let id = req.params.id
+        
+//////////////////////////////////////////////////////////
 
-        // console.log(qty)
-        // console.log(id)
-    
-        // console.log("hit add sticker");
-
-    
-        //Danny's task[]: insert a row into CartItem
-    
-        const sendToCart = await CartItem.create({
-            userId: 1, // once users is implimented, the user id will come from user sessions
-            quantity: qty,
-            stickerId: id
+        let cartI = await CartItem.findAll({
+            where: {
+                stickerId: id,
+                userId: 1
+            },
         });
+
+    
+        
+        if (cartI.length === 0) {
+            
+            const sendToCart = await CartItem.create({
+                userId: 1, // once users is implimented, the user id will come from user sessions
+                quantity: qty,
+                stickerId: id
+            });
+            
+        } else if (cartI.length > 0) {
+             let matchingCartItem = cartI[0]
+
+             matchingCartItem.quantity += 1
+             await matchingCartItem.save()
+        }
+
+       // model instance
+
+///////////////////////////////////////////////////////////
+        // const sendToCart = await CartItem.create({
+        //     userId: 1, // once users is implimented, the user id will come from user sessions
+        //     quantity: qty,
+        //     stickerId: id
+        // });
 
         res.status(200).send("Item Successfully added to cart")
 

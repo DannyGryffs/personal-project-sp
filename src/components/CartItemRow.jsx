@@ -59,3 +59,26 @@ export default function CartItemRow(props) {
     </tr>
   )
 }
+
+//TODO
+
+//when sending items to cart
+
+//needs to check the cart items and see if theres a matching id of
+//the item being added, if theres a matching id,
+//add to that items quantity
+//if theres no matching id create new cart item
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+//write an orm command(findAll)that grabs the id from the cartItem
+//this will return an array **
+//then take that array (cartI) and set a conditional
+
+//if Arr.length === 0 => run the create command,
+//else if arr.length === 1 or more, run a new command 
+//new command increases the qty by # of items added  
+
+
