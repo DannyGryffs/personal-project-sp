@@ -9,7 +9,8 @@ function Cart() {
     useEffect(() => {
         axios.get('/api/cart')
         .then((response) => {
-            // console.log(response.data)
+            console.log('Cart useEffect response');
+            console.log(response.data)
             setCartItems(response.data)
         })
     }, []);

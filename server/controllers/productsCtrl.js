@@ -72,23 +72,88 @@ export default {
      addPackToCart: async (req, res) => {
         let { qty } = req.query
         let { id } = req.params
+        console.log('== Add To Packs Route ==');
+        console.log(req.params);
+        console.log(req.query);
         // console.log("Hit Add Pack to cart")
 
-        const sendToCart = await CartItem.create({
-            userId: 1, // once users is implimented, the user id will come from user sessions
-            quantity: qty,
-            packId: id
+        try {
+            // check if there is one of these items in the cart already
+            const cartItem = await CartItem.findOne({
+                where: {
+                    packId: id,
+                }
+            })
+            console.log(cartItem);
+            // if there is, just increase the quantity
+            if (cartItem) {
+                cartItem.quantity++;
+                await cartItem.save();
+            // if there is not, add the item to the cart
+            } else {
+                await CartItem.create({
+                    quantity: qty,
+                    packId: id,
+                    userId: 1,
+                })
+            }
+            // send response
+            res.status(200).send(cartItem);
+        }catch(err) {
+            console.log(err);
+        }
+
+        //////////////////////////////////////////////////////////////
+
+        /*
+        let cartI = await CartItem.findAll({
+            where: {
+                stickerId: id,
+                userId: 1
+            },
         });
 
+        console.log('CartI');
+        console.log(cartI);
 
-        res.sendStatus(200)
+    
+        
+        if (cartI.length === 0) {
+            
+            const sendToCart = await CartItem.create({
+                userId: 1, // once users is implimented, the user id will come from user sessions
+                quantity: qty,
+                PackId: id
+            });
+            
+        } else if (cartI.length > 0) {
+             let matchingCartItem = cartI[0]
+
+             matchingCartItem.quantity += 1
+             await matchingCartItem.save()
+        }
+
+        /////////////////////////////////////////////////////////////////
+        // const sendToCart = await CartItem.create({
+        //     userId: 1, // once users is implimented, the user id will come from user sessions
+        //     quantity: qty,
+        //     packId: id
+        // });
+
+
+        //res.sendStatus(200)
+        res.status(200).send(cartI);
+        */
+        
      },
      getCartItems: async (req, res) => {
+        console.log('== get cart items route ==');
         const id = 1;
         console.log("hit cart items")
 
+
         let cartI = await CartItem.findAll({
-            attributes: ["quantity", "id"],
+            //attributes: ["quantity", "id"],
             where: {
                 userId: id
             },

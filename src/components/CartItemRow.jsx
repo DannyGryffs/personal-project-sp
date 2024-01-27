@@ -4,6 +4,7 @@ import "../index.css"
 
 export default function CartItemRow(props) {
   const { cartItem } = props
+  
 
   console.log(props.cartItem)
 
