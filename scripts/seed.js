@@ -56,12 +56,64 @@ const pack = [
     {
         name: "Cosmos",
         description: "8 space themed stickers",
-        price: "20.00"
+        price: "25.00",
+        image: "Cosmos.png"
+    
     },
     {
         name: "Animals",
         description: "8 animal themed stickers",
-        price: "20.00"
+        price: "25.00",
+        image: "Animals.png"
+
+    },
+    {
+        name: "Originals I",
+        description: "8 SP original stickers",
+        price: "25.00",
+        image: "Originals1.png"
+    },
+    {
+        name: "Aliens",
+        description: "8 alien themed stickers",
+        price: "25.00",
+        image: "Aliens.png"
+    },
+    {
+        name: "Wild Animals",
+        description: "8 stickers of animals up to no good",
+        price: "25.00",
+        image: "WildAnimals.png"
+    },
+    {
+        name: "Originals II",
+        description: "8 SP original stickers",
+        price: "25.00",
+        image: "Originals2.png"
+    },
+    {
+        name: "Desert Animals",
+        description: "8 stickers of desert animals",
+        price: "25.00",
+        image: "DesertAnimals.png"
+    },
+    {
+        name: "Originals III",
+        description: "8 SP original stickers",
+        price: "25.00",
+        image: "Originals3.png"
+    },
+    {
+        name: "Arizona",
+        description: "8 Arizona themed stickers",
+        price: "25.00",
+        image: "Arizona.png"
+    },
+    {
+        name: "PLUG LIFE",
+        description: "5 Sticker Plug stickers",
+        price: "15.00",
+        image: "PlugLife.png"
     },
 ]
 

@@ -43,7 +43,10 @@ export default function CartItemRow(props) {
   return (cartItem.Sticker ?
     <tr>
       <td>
-        <h3>{ cartItem.Sticker.name } Sticker</h3>
+        <button onClick={removeItem}>Remove</button>
+      </td>
+      <td>
+        <h3>{ cartItem.Sticker.name } - Sticker</h3>
       </td>
       <td>
           <img className='img'  src={`../../public/stickers/${cartItem.Sticker.image}`} />
@@ -65,10 +68,10 @@ export default function CartItemRow(props) {
         <button onClick={removeItem}>Remove</button>
       </td>
       <td>
-        <h3>{ cartItem.Pack.name } Pack</h3>
+        <h3>{ cartItem.Pack.name } - Pack</h3>
       </td>
       <td>
-        <img className='img' src={`../../public/stickers/${cartItem.Pack.name}.png`} />
+        <img className='img' src={`../../public/packs/${cartItem.Pack.image}`} />
       </td>
       <td className='qtyBtns'>
         <button onClick={()=> updateQty('dec')} className='qtyBtn'>-</button>

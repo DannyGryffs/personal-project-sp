@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-./public/stickers
+public/packs/
+public/stickers/
 vite.config.js.timestamp-*

@@ -52,7 +52,7 @@ function Packs() {
                         // <div>
                         //     {/* <img className="packRound" src={`../../public/stickers/${pack.name}.png`} alt="" /> */}
                         // </div>
-                        <img className='packStickers' src={`../../public/stickers/${pack.name}.png`} 
+                        <img className='packStickers' src={`../../public/packs/${pack.image}`} 
                         //  onClick={() => setShowPackStickers(true)}
                         />
                     }

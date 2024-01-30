@@ -35,13 +35,20 @@ Pack.init(
         price: {
             type: DataTypes.DECIMAL,
             allowNull: false
+        },
+        image: { 
+            type: DataTypes.STRING,
+            // type: DataTypes.BLOB('long'),
+            allowNull: true 
         }
+
     },
     {
         tableName: 'packs',
         sequelize: sequelize,
         timestamps: false
     }
+    
 )
 
 
