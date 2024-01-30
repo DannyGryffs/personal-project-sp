@@ -9,8 +9,8 @@ function Cart() {
     useEffect(() => {
         axios.get('/api/cart')
         .then((response) => {
-            console.log('Cart useEffect response');
-            console.log(response.data)
+            // console.log('Cart useEffect response');
+            // console.log(response.data)
             setCartItems(response.data)
         })
     }, []);
@@ -19,6 +19,7 @@ function Cart() {
         return <CartItemRow
             key={item.id}
             cartItem={item}
+            setCartItems={setCartItems}
         />
     })
 
@@ -32,7 +33,7 @@ function Cart() {
                         <td className='cartItemsCat'>Item</td>
                         <td className='cartItemsCat'>Qty</td>
                         <td className='cartItemsCat'>Price</td>
-                        <td className='cartItemsCat'>Total</td>
+                        {/* <td className='cartItemsCat'>Total</td> */}
                     </tr>
                 </thead>
                 <tbody>

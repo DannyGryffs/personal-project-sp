@@ -19,7 +19,7 @@ export default {
             }
         })
 
-        console.log(packs)
+        // console.log(packs)
 
         res.status(200).send(packs)
     },
@@ -72,9 +72,9 @@ export default {
      addPackToCart: async (req, res) => {
         let { qty } = req.query
         let { id } = req.params
-        console.log('== Add To Packs Route ==');
-        console.log(req.params);
-        console.log(req.query);
+        // console.log('== Add To Packs Route ==');
+        // console.log(req.params);
+        // console.log(req.query);
         // console.log("Hit Add Pack to cart")
 
         try {
@@ -84,7 +84,7 @@ export default {
                     packId: id,
                 }
             })
-            console.log(cartItem);
+            // console.log(cartItem);
             // if there is, just increase the quantity
             if (cartItem) {
                 cartItem.quantity++;
@@ -103,53 +103,11 @@ export default {
             console.log(err);
         }
 
-        //////////////////////////////////////////////////////////////
-
-        /*
-        let cartI = await CartItem.findAll({
-            where: {
-                stickerId: id,
-                userId: 1
-            },
-        });
-
-        console.log('CartI');
-        console.log(cartI);
-
-    
-        
-        if (cartI.length === 0) {
-            
-            const sendToCart = await CartItem.create({
-                userId: 1, // once users is implimented, the user id will come from user sessions
-                quantity: qty,
-                PackId: id
-            });
-            
-        } else if (cartI.length > 0) {
-             let matchingCartItem = cartI[0]
-
-             matchingCartItem.quantity += 1
-             await matchingCartItem.save()
-        }
-
-        /////////////////////////////////////////////////////////////////
-        // const sendToCart = await CartItem.create({
-        //     userId: 1, // once users is implimented, the user id will come from user sessions
-        //     quantity: qty,
-        //     packId: id
-        // });
-
-
-        //res.sendStatus(200)
-        res.status(200).send(cartI);
-        */
-        
      },
      getCartItems: async (req, res) => {
-        console.log('== get cart items route ==');
+        // console.log('== get cart items route ==');
         const id = 1;
-        console.log("hit cart items")
+        // console.log("hit cart items")
 
 
         let cartI = await CartItem.findAll({
@@ -166,20 +124,82 @@ export default {
             ]
         });
 
-        console.log(cartI);
+        // console.log(cartI);
 
         res.status(200).send(cartI)
 
+    },
+
+    cartIQty: async (req, res) => {
+        // grab the id and type from the params and query of the request
+
+        let { itemId } = req.params
+        let { type } = req.query
+        console.log(itemId)
+        console.log(type)
+
+        // find Item by its pk save in variable
+        let cItem = await CartItem.findByPk(itemId);
+        // update quantity field by type
+        if ( type === 'inc'){
+            cItem.quantity = cItem.quantity + 1
+            await cItem.save();
+        } else if(cItem.quantity <= 1 && type === "dec") {
+            cItem.destroy()
+        }else {
+            cItem.quantity = cItem.quantity - 1
+            await cItem.save();
+        }
+        // variablename.save()
+
+         
+
+        const id = 1;
+        const allCartItems = await CartItem.findAll({
+            //attributes: ["quantity", "id"],
+            where: {
+                userId: id
+            },
+            include: [
+                {
+                    model: Sticker,
+                    attributes: ["name", "image", "price"]
+                },
+                {model: Pack}
+            ]
+        });
+
+        res.status(200).send(allCartItems);
+    },
+
+    cartIDlt: async (req, res) => {
+        // grab the id and type from the params and query of the request
+
+        let { itemId } = req.params;
+
+        await CartItem.destroy({
+            where: {
+                id: itemId
+            }
+        })
+
+        const id = 1;
+        const allCartItems = await CartItem.findAll({
+            //attributes: ["quantity", "id"],
+            where: {
+                userId: id
+            },
+            include: [
+                {
+                    model: Sticker,
+                    attributes: ["name", "image", "price"]
+                },
+                {model: Pack}
+            ]
+        });
+
+        res.status(200).send(allCartItems);
     }
-        // get all data from cartitems where the userId = 1
-
-        // console.log(cartItemData)
-        // inlcude stckers with the id that matches the stickerId
-
-        // include packs with the id that matches the  packId
-
-        // send data back to front end
-        
         
 
 

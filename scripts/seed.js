@@ -54,13 +54,11 @@ const stickers = [
 
 const pack = [
     {
-        id: 1,
         name: "Cosmos",
         description: "8 space themed stickers",
         price: "20.00"
     },
     {
-        id: 2,
         name: "Animals",
         description: "8 animal themed stickers",
         price: "20.00"

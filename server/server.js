@@ -17,5 +17,9 @@ app.post(`/api/cart/pack/:id`, prodCtrl.addPackToCart)
 
 app.get('/api/cart', prodCtrl.getCartItems)
 
+app.put('/api/cart/itemQty/:itemId', prodCtrl.cartIQty)
+
+app.delete('/api/cart/removeI/:itemId', prodCtrl.cartIDlt)
+
 
 ViteExpress.listen(app, 3030, () => {console.log('cruising on port 3030')})

@@ -8,7 +8,7 @@ function Shop() {
                 <h2><Link class="headerTxt" to="/stickers">Stickers</Link></h2>
             </div>
             <div>
-               <h2><Link class="headerTxt" to="/packs">Sticker Packs</Link></h2>
+               <h2><Link class="headerTxt" to="/packs">Packs</Link></h2>
             </div>
         </div>
     )
