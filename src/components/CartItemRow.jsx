@@ -52,13 +52,16 @@ export default function CartItemRow(props) {
           <img className='img'  src={`../../public/stickers/${cartItem.Sticker.image}`} />
         <h3>{ cartItem.Sticker.description }</h3>
       </td>
-      <td className='qtyBtns'>
-        <button onClick={()=> updateQty('dec')} >-</button>
-        <h3 className='qty' > { cartItem.quantity } </h3>
-        <button onClick={()=> updateQty('inc')} >+</button>
+      <td >
+        <div class="qtyBtns">
+          <button onClick={()=> updateQty('dec')} >-</button>
+          <h3  > { cartItem.quantity } </h3>
+          <button onClick={()=> updateQty('inc')} >+</button>
+        </div>
       </td>
+      {console.log(cartItem.Sticker.price, cartItem.Sticker.quantity)}
       <td>
-        <h3 className='price'>${ cartItem.Sticker.price }</h3>
+        <h3 className='price'>${ +cartItem.Sticker.price * +cartItem.quantity }</h3>
       </td>
     </tr>:
 
@@ -73,13 +76,15 @@ export default function CartItemRow(props) {
       <td>
         <img className='img' src={`../../public/packs/${cartItem.Pack.image}`} />
       </td>
-      <td className='qtyBtns'>
-        <button onClick={()=> updateQty('dec')} className='qtyBtn'>-</button>
-        <h3 className='qty' >  { cartItem.quantity }  </h3>
-        <button onClick={()=> updateQty('inc')} className='qtyBtn'>+</button>
+      <td >
+        <div class="qtyBtns">
+          <button onClick={()=> updateQty('dec')} >-</button>
+          <h3> { cartItem.quantity }  </h3>
+          <button onClick={()=> updateQty('inc')} >+</button>
+        </div>
       </td>
       <td>
-        <h3 className='price' >${ cartItem.Pack.price }</h3>
+        <h3 className='price' >${ cartItem.Pack.price * cartItem.quantity }</h3>
       </td>
       {/* <td>
         <h3>{ cartItem.Pack.id }</h3>

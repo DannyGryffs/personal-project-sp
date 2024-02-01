@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import './reset.css'
 import './index.css'
 import {
   Route,
@@ -14,6 +15,8 @@ import Stickers from './components/Stickers.jsx'
 import Packs from './components/Packs.jsx'
 import About from './components/About.jsx'
 import Cart from './components/Cart.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const router = createBrowserRouter(

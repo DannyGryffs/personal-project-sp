@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import CartItemRow from './CartItemRow';
+import { Table } from 'react-bootstrap'
 
 function Cart() {
 
@@ -23,12 +24,23 @@ function Cart() {
         />
     })
 
+    function itemCount(){
+        const sum = 0;
+        // loops through cartitems
+        for (let i = 0; i < cartItems.length; i++){
+            
+        }
+        //grab qty
+        //add to sum 
+        //rtn syn 
+    }
 
     return (
         <div className='cartContainer'>
-            <table className='table'>
+            <Table className='table'>
                 <thead>
                     <tr>
+                        <td></td>
                         <td className='cartItemsCat'>Name</td>
                         <td className='cartItemsCat'>Item</td>
                         <td className='cartItemsCat'>Qty</td>
@@ -39,8 +51,23 @@ function Cart() {
                 <tbody>
                     { eachItem }
                 </tbody>
-
-            </table>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>item count</th>
+                        <th>subtotal</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </Table>
         </div>
     )  
 }

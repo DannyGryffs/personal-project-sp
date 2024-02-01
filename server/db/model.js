@@ -76,7 +76,7 @@ Sticker.init(
             allowNull: false
         },
         tag: {
-            type: DataTypes.STRING(35),
+            type: DataTypes.STRING,
             allowNull: false
         },
         price: {

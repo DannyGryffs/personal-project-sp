@@ -95,23 +95,24 @@ body {
     
 }
 
-.cartItemsCat {
+/* .cartItemsCat {
     padding: 30px;
-}
+} */
 
-.cartContainer {
+/* .cartContainer {
     color: black;
     border: solid 4px black;
     background-color: rgb(255, 174, 0);
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .qtyBtns {
     display: flex;
     align-items: center;
     /* margin-bottom: 55px */
+    justify-content: space-evenly;
 }
 
 
@@ -121,6 +122,6 @@ body {
     margin-bottom: 55px
 }
 
-.price {
+/* .price {
     margin-left: 15px;
-}
+} */
