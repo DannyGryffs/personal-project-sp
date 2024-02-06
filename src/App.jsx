@@ -4,34 +4,32 @@ import { Outlet, Link } from 'react-router-dom'
 // const stickers = ["zebraSpagetti.png", "cherryBomb.png"]
 
 function App() {
+  // const [showTags, setShowTags] = useState(false);
 
-  // const eachStickers = stickers.map((sticker) => {
-  //   return <img  style={{maxHeight: "200px"}} src={`../public/stickers/${sticker}`} />
-  // }) 
-
-  // const logo = logofile.map((logo) => {
-  //   return 
-  // })
+  
+  // function changeSpan() {
+  //   setShowTags(true)
+  // }
 
   return (
     <>
-    {/* <header id="header"> */}
         <div id="header">
-          <img style={{maxHeight: "75px"}} src={`../public/logo/icon.png`} />
-          <h4>
-              <Link className="headerTxt" to="/">Home</Link>
-          </h4>
-          <h4>
-            <Link className="headerTxt" to="/about">About</Link>
-          </h4>
-          <h4>
-            <Link className="headerTxt" to="/shop">Shop</Link>
-          </h4>
-          <h4>
-            <Link className="headerTxt" to="/cart">Cart(icon)</Link>
-          </h4>
+          <img id="icon" style={{maxHeight: "75px"}} src={`/logo/icon.png`} />
+          
+            <h4 className='nav'>
+                <Link className="headerTxt" to="/">Home</Link>
+            </h4>
+            <h4 className='nav'>
+              <Link className="headerTxt" to="/about">About</Link>
+            </h4>
+            <h4 className='nav'>
+              <Link className="headerTxt" to="/shop">Shop</Link>
+            </h4>
+            <h4 className='nav'>
+              <Link className="headerTxt" to="/cart">Cart</Link>
+            </h4>
+          
         </div>
-    {/* </header> */}
     
       {/* <div>
         { eachStickers }

@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom'
 
 function Shop() {
     return (
-        <div>
-            <h2>////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Here's the Shop page /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</h2>
-            <div>
-                <h2><Link class="headerTxt" to="/stickers">Stickers</Link></h2>
+        <section className='page-container'>
+            <div id="shop">
+                <div id='shop-container'>
+                    <h2><Link class="shop-links" to="/packs">Shop Packs</Link></h2>
+                    <img className="ShopImg" src="../../packs/Originals2.png" alt="AI Artist" />
+                    <h2><Link class="shop-links" to="/stickers">Shop Stickers</Link></h2>
+                    <img className="ShopImg" src="../../stickers/Celestia.png" alt="Image of alien sticker" />
+                    <img className="ShopImg" src="../../stickers/AncientDragon.png" alt="Image of dragon sticker" />
+                </div>
             </div>
-            <div>
-               <h2><Link class="headerTxt" to="/packs">Packs</Link></h2>
-            </div>
-        </div>
+        </section>
     )
 }
 

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Button from 'react-bootstrap/Card';
 
 function Stickers() {
     
@@ -41,14 +44,10 @@ function Stickers() {
 
     // 4. render eachsticker
     return (
-        <div>
-            <header>
-
-
-            </header>
+        <div className="sticker-wrapper">
             
             { eachSticker }
-            each sticker listed, 16 per page 4 pages
+            {/* each sticker listed, 16 per page 4 pages */}
         </div>
     )
 }
@@ -75,18 +74,22 @@ function Sticker(props) {
     console.log(sticker);
     // do the map to create each individual sticker
     return (
-        <div id="stickerDisplay">
+        <>
+            <div id="stickerDisplay">
                 <h2 className="headerTxt" >{ sticker.name }</h2>
-                <img style={{maxHeight: "225px"}} src={`/stickers/${sticker.image}`} />
+                <img style={{maxHeight: "225px", cursor: "pointer"}} src={`/stickers/${sticker.image}`} />
                 <h3 className="headerTxt" >{ sticker.description }</h3>
                 <h4 className="headerTxt" > Tags: { sticker.tag }</h4>
                 <h4 className="headerTxt" >${ sticker.price }</h4>
-                <button onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }}>-</button>
-                <input  value={quantity} type='number' min='1' readOnly/>
-                <button onClick={ ()=>{setQuantity( quantity + 1 ) }}>+</button>
+                <section className="qtyI">
+                    <Button className="qtyInput" onClick={ ()=>{setQuantity( quantity + 1 ) }} style={{ cursor: 'pointer' }}>+</Button>
+                    <input className="qtyInput" value={quantity} type='number' min='1' readOnly/>
+                    <Button className="qtyInput" onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }} style={{ cursor: 'pointer' }}>-</Button>
+                </section>
                 <br />
-                <button onClick={()=>{moveSticker(sticker.id)}} className="headerTxt" >Add To Cart</button>
+                <Button onClick={() => { moveSticker(sticker.id); setQuantity(1); }} className="headerTxt" style={{ cursor: 'pointer' }}>Add To Cart</Button>
             </div>
+        </>
     )
 }
 

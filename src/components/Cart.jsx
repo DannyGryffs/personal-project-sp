@@ -36,39 +36,41 @@ function Cart() {
     }
 
     return (
-        <div className='cartContainer'>
-            <Table className='table'>
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td className='cartItemsCat'>Name</td>
-                        <td className='cartItemsCat'>Item</td>
-                        <td className='cartItemsCat'>Qty</td>
-                        <td className='cartItemsCat'>Price</td>
-                        {/* <td className='cartItemsCat'>Total</td> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    { eachItem }
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th>item count</th>
-                        <th>subtotal</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </Table>
-        </div>
+        <section className='page-container'>
+            <div className='cartContainer'>
+                <Table className='table'>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td className='cartItemsCat'>Name</td>
+                            <td className='cartItemsCat'>Item</td>
+                            <td className='cartItemsCat'>Qty</td>
+                            <td className='cartItemsCat'>Price</td>
+                            {/* <td className='cartItemsCat'>Total</td> */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { eachItem }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>item count</th>
+                            <th>subtotal</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </Table>
+            </div>
+        </section>
     )  
 }
 

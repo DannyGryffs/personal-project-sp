@@ -62,30 +62,33 @@ function Pack(props){
         })
 
         console.log(res.data);
-        alert(res.data);
+        alert("Pack added to cart");
     }
     
     
     return (
-        <div key={pack.id} className='pack'>
-            <div>
-                <h2 className="titleTxt">{ pack.name }</h2>
-                {showPackStickers ? 
-                    eachSticker(pack.Stickers): 
-                    <img className='packStickers' src={`../../public/packs/${pack.image}`}/>
-                }
-                <h3 className="headerTxt" >{ pack.description }</h3>
+        <section className='page-container'>
+        
+            <div key={pack.id} className='packs'>
+                <div>
+                    <h2 className="packTitleTxt">{ pack.name }</h2>
+                    {showPackStickers ? 
+                        eachSticker(pack.Stickers): 
+                        <img className='packStickers' src={`../../public/packs/${pack.image}`}/>
+                    }
+                    <h3 className="headerTxt" >{ pack.description }</h3>
+                    <br />
+                    <h4 className="headerTxt" >${ pack.price }</h4>
+                </div>
+                <div>
+                    <button onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }}>-</button>
+                    <input  value={quantity} type='number' min='1' readOnly/>
+                    <button onClick={ ()=>{setQuantity( quantity + 1 ) }}>+</button>
+                </div>
                 <br />
-                <h4 className="headerTxt" >${ pack.price }</h4>
+                <button className="cartBtn" onClick={()=>{movePack(pack.id)}} >Add To Cart</button>
             </div>
-            <div>
-                <button onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }}>-</button>
-                <input  value={quantity} type='number' min='1' readOnly/>
-                <button onClick={ ()=>{setQuantity( quantity + 1 ) }}>+</button>
-            </div>
-            <br />
-            <button onClick={()=>{movePack(pack.id)}} className="headerTxt" >Add To Cart</button>
-        </div>
+        </section>
     )
 }
 
