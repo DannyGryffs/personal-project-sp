@@ -74,22 +74,33 @@ function Sticker(props) {
     console.log(sticker);
     // do the map to create each individual sticker
     return (
-        <>
-            <div id="stickerDisplay">
-                <h2 className="headerTxt" >{ sticker.name }</h2>
-                <img style={{maxHeight: "225px", cursor: "pointer"}} src={`/stickers/${sticker.image}`} />
-                <h3 className="headerTxt" >{ sticker.description }</h3>
-                <h4 className="headerTxt" > Tags: { sticker.tag }</h4>
-                <h4 className="headerTxt" >${ sticker.price }</h4>
-                <section className="qtyI">
-                    <Button className="qtyInput" onClick={ ()=>{setQuantity( quantity + 1 ) }} style={{ cursor: 'pointer' }}>+</Button>
-                    <input className="qtyInput" value={quantity} type='number' min='1' readOnly/>
-                    <Button className="qtyInput" onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }} style={{ cursor: 'pointer' }}>-</Button>
-                </section>
-                <br />
-                <Button onClick={() => { moveSticker(sticker.id); setQuantity(1); }} className="headerTxt" style={{ cursor: 'pointer' }}>Add To Cart</Button>
-            </div>
-        </>
+        <section className='page-container'>  
+            <>
+                <div id="stickerDisplay">
+                    <h2 className="headerTxt" >{ sticker.name }</h2>
+                    <img
+                        style={{ maxHeight: "225px", cursor: "pointer", transition: "transform 0.3s" }}
+                        src={`/stickers/${sticker.image}`}
+                        onMouseEnter={(e) => {
+                            e.target.style.transform = "scale(1.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.transform = "scale(1)";
+                        }}
+                    />
+                    <h3 className="headerTxt" >{ sticker.description }</h3>
+                    <h4 className="headerTxt" > Tags: { sticker.tag }</h4>
+                    <h4 className="headerTxt" >${ sticker.price }</h4>
+                    <section className="qtyI">
+                        <Button className="qtyInput" onClick={ ()=>{setQuantity( quantity + 1 ) }} style={{ cursor: 'pointer' }}>+</Button>
+                        <input className="qtyInput" value={quantity} type='number' min='1' readOnly/>
+                        <Button className="qtyInput" onClick={ ()=>{ quantity > 0 ? setQuantity( quantity - 1 ): null }} style={{ cursor: 'pointer' }}>-</Button>
+                    </section>
+                    <br />
+                    <Button onClick={() => { moveSticker(sticker.id); setQuantity(1); }} className="headerTxt" style={{ cursor: 'pointer' }}>Add To Cart</Button>
+                </div>
+            </>
+        </section>
     )
 }
 

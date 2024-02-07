@@ -74,7 +74,17 @@ function Pack(props){
                     <h2 className="packTitleTxt">{ pack.name }</h2>
                     {showPackStickers ? 
                         eachSticker(pack.Stickers): 
-                        <img className='packStickers' src={`../../public/packs/${pack.image}`}/>
+                        <img
+                        style={{ maxHeight: "500px", cursor: "pointer", transition: "transform 0.3s" }}
+                            className='packStickers'
+                            src={`../../public/packs/${pack.image}`}
+                            onMouseEnter={(e) => {
+                                e.target.style.transform = 'scale(1.2)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.transform = 'scale(1)';
+                            }}
+                        />
                     }
                     <h3 className="headerTxt" >{ pack.description }</h3>
                     <br />

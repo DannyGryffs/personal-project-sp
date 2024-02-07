@@ -9,7 +9,7 @@ function About() {
                     <h1 id="abtHead">Welcome to the future of creativity and expression!</h1>
                     <section className="para1">
                         <span>
-                            <h3 className="para1txtHead">StickerPlug is passionate about pushing the boundaries of art and design</h3>
+                            <h3 className="para1txtHead">We're passionate about pushing the boundaries of art and design</h3>
                             <p className="para1txt">This platform is focused on delivering a diverse range of unique, AI-crafted sticker images suitable for every occasion.</p>
                             <img className="para1Img" src="../../pageImages/Artist.png" alt="AI Artist" />
                         </span>
